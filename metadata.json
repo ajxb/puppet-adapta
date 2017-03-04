@@ -1,0 +1,33 @@
+{
+  "name": "ajxb-adapta",
+  "version": "1.0.0",
+  "author": "Adam Butler",
+  "summary": "Install and manage adatpa theme",
+  "license": "Apache-2.0",
+  "source": "https://github.com/ajxb/puppet-adapta",
+  "project_page": "https://github.com/ajxb/puppet-adapta",
+  "issues_url": "https://github.com/ajxb/puppet-adapta/issues",
+  "tags": [
+    "adapta"
+  ],
+  "dependencies": [
+    {"name":"puppetlabs/stdlib","version_requirement":">= 4.15.0 < 5.0.0"},
+    {"name":"puppetlabs/apt","version_requirement":">= 2.3.0 < 3.0.0"}
+  ],
+  "data_provider": null,
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [
+        "16.04"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 4.5.0 < 5.0.0"
+    }
+  ],
+  "description": "Module to manage adapta theme on Ubuntu"
+}
