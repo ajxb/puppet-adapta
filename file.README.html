@@ -125,6 +125,9 @@ default configuration:</p>
   package_ensure =&gt; &#39;latest&#39;,
 }</code></pre>
 
+<p>To enable the theme for a given user: <code>puppet adapta_gtk_theme::user {
+&#39;my_user&#39;: } </code></p>
+
 <h2 id="label-Reference">Reference</h2>
 
 <h3 id="label-Classes">Classes</h3>
@@ -141,6 +144,12 @@ parameters</p>
 </li><li>
 <p><code>adapta_gtk_theme::install</code>: Handles the ppa setup and the
 adapta-gtk-theme package</p>
+</li></ul>
+
+<h4 id="label-Public+defined+types">Public defined types</h4>
+<ul><li>
+<p><code>adapta_gtk_theme::user</code>: Enables the adapta-gtk-theme for a
+given user</p>
 </li></ul>
 
 <h3 id="label-Parameters">Parameters</h3>
@@ -216,7 +225,7 @@ documentation.</p>
 </div></div>
 
       <div id="footer">
-  Generated on Sun Mar  5 12:37:56 2017 by
+  Generated on Sun Mar  5 16:05:48 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.3.3).
 </div>
