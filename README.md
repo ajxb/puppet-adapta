@@ -49,6 +49,11 @@ class { 'adapta_gtk_theme':
 }
 ```
 
+To enable the theme for a given user:
+```puppet
+adapta_gtk_theme::user { 'my_user': }
+```
+
 ## Reference
 
 ### Classes
@@ -61,6 +66,10 @@ class { 'adapta_gtk_theme':
 
 * `adapta_gtk_theme::params`: Handles the module default parameters
 * `adapta_gtk_theme::install`: Handles the ppa setup and the adapta-gtk-theme package
+
+#### Public defined types
+
+* `adapta_gtk_theme::user`: Enables the adapta-gtk-theme for a given user
 
 ### Parameters
 
