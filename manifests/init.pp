@@ -1,22 +1,22 @@
-# Class: adapta
+# Class: adapta_gtk_theme
 #
-# Manage installation and configuration of adapta on Ubuntu, installing from ppa
+# Manage installation and configuration of adapta-gtk-theme on Ubuntu, installing from ppa
 #
 # @example Declaring the class
-#   include adapta
+#   include adapta_gtk_theme
 # @example Declaring the class with parameters
-#   class { 'adapta':
+#   class { 'adapta_gtk_theme':
 #     package_ensure => true,
 #   }
 #
-# @param package_ensure Specifies whether to install the adapta package, and what version to install
-class adapta (
-  String  $package_ensure = $adapta::params::package_ensure,
-) inherits adapta::params {
+# @param package_ensure Specifies whether to install the adapta-gtk-theme package, and what version to install
+class adapta_gtk_theme (
+  String  $package_ensure = $adapta_gtk_theme::params::package_ensure,
+) inherits adapta_gtk_theme::params {
 
-  class { 'adapta::install':
+  class { 'adapta_gtk_theme::install':
     package_ensure => $package_ensure,
   }
 
-  contain adapta::install
+  contain adapta_gtk_theme::install
 }

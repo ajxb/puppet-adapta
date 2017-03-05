@@ -3,9 +3,9 @@
 #### Table of Contents
 
 1. [Description](#description)
-1. [Setup - The basics of getting started with adapta](#setup)
-    * [What adapta affects](#what-adapta-affects)
-    * [Beginning with adapta](#beginning-with-adapta)
+1. [Setup - The basics of getting started with adapta_gtk_theme](#setup)
+    * [What adapta_gtk_theme affects](#what-adapta_gtk_theme-affects)
+    * [Beginning with adapta_gtk_theme](#beginning-with-adapta_gtk_theme)
 1. [Usage - Configuration options and additional functionality](#usage)
 1. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
 1. [Limitations - OS compatibility, etc.](#limitations)
@@ -13,38 +13,38 @@
 
 ## Description
 
-The adapta module installs the [adapta gtk theme](https://github.com/adapta-project/adapta-gtk-theme) from [ppa](https://launchpad.net/~tista/+archive/ubuntu/adapta) on Ubuntu.
+The adapta_gtk_theme module installs the [adapta gtk theme](https://github.com/adapta-project/adapta_gtk_theme) from [ppa](https://launchpad.net/~tista/+archive/ubuntu/adapta) on Ubuntu.
 
 ## Setup
 
-### What adapta affects
+### What adapta_gtk_theme affects
 
 * apt configuration to include adapta ppa
 
-### Beginning with adapta
+### Beginning with adapta_gtk_theme
 
-To install adapta with default options:
+To install adapta-gtk-theme with default options:
 
-`include adapta`
+`include adapta_gtk_theme`
 
 To customize options:
 
 ```puppet
-class { 'adapta':
+class { 'adapta_gtk_theme':
   package_ensure => 'latest',
 }
 ```
 
 ## Usage
 
-The default adapta class installs adapta. To use default configuration:
+The default adapta_gtk_theme class installs adapta-gtk-theme. To use default configuration:
 
-`include adapta`
+`include adapta_gtk_theme`
 
 To manually configure the installation:
 
 ```puppet
-class { 'adapta':
+class { 'adapta_gtk_theme':
   package_ensure => 'latest',
 }
 ```
@@ -55,28 +55,28 @@ class { 'adapta':
 
 #### Public classes
 
-* `adapta`: Installs adapta
+* `adapta_gtk_theme`: Installs adapta-gtk-theme
 
 #### Private classes
 
-* `adapta::params`: Handles the module default parameters
-* `adapta::install`: Handles the ppa setup and the adapta package
+* `adapta_gtk_theme::params`: Handles the module default parameters
+* `adapta_gtk_theme::install`: Handles the ppa setup and the adapta-gtk-theme package
 
 ### Parameters
 
-The following parameters are available in the `adapta` class:
+The following parameters are available in the `adapta_gtk_theme` class:
 
 #### `package_ensure`
 
 Data type: String.
 
-Whether to install the adapta package, and what version to install. Values: The same as used for the puppet package type, see [https://docs.puppet.com/puppet/latest/type.html#package-attribute-ensure](https://docs.puppet.com/puppet/latest/type.html#package-attribute-ensure)
+Whether to install the adapta-gtk-theme package, and what version to install. Values: The same as used for the puppet package type, see [https://docs.puppet.com/puppet/latest/type.html#package-attribute-ensure](https://docs.puppet.com/puppet/latest/type.html#package-attribute-ensure)
 
 Default value: 'latest'.
 
 ## Limitations
 
-This module has only been tested against Ubuntu 16.04.  As adapta is a desktop theme this module will only produce tangible results when used with a desktop variant of Ubuntu.
+This module has only been tested against Ubuntu 16.04.  As adapta-gtk-theme is a desktop theme this module will only produce tangible results when used with a desktop variant of Ubuntu.
 
 ## Development
 

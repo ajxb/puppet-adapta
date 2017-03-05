@@ -1,14 +1,14 @@
 {
-  "name": "ajxb-adapta",
-  "version": "1.0.0",
+  "name": "ajxb-adapta_gtk_theme",
+  "version": "1.1.0",
   "author": "Adam Butler",
-  "summary": "Install and manage adatpa theme",
+  "summary": "Install and manage adatpa-gtk-theme",
   "license": "Apache-2.0",
-  "source": "https://github.com/ajxb/puppet-adapta",
-  "project_page": "https://github.com/ajxb/puppet-adapta",
-  "issues_url": "https://github.com/ajxb/puppet-adapta/issues",
+  "source": "https://github.com/ajxb/puppet-adapta_gtk_theme",
+  "project_page": "https://github.com/ajxb/puppet-adapta_gtk_theme",
+  "issues_url": "https://github.com/ajxb/puppet-adapta_gtk_theme/issues",
   "tags": [
-    "adapta"
+    "adapta-gtk-theme"
   ],
   "dependencies": [
     {"name":"puppetlabs/stdlib","version_requirement":">= 4.15.0 < 5.0.0"},
@@ -29,5 +29,5 @@
       "version_requirement": ">= 4.5.0 < 5.0.0"
     }
   ],
-  "description": "Module to manage adapta theme on Ubuntu"
+  "description": "Module to manage adapta-gtk-theme on Ubuntu"
 }

@@ -1,5 +1,5 @@
 require 'spec_helper'
-describe 'adapta' do
+describe 'adapta_gtk_theme' do
   on_supported_os.each do |os, facts|
     context "on #{os}" do
       let :facts do
@@ -7,9 +7,9 @@ describe 'adapta' do
       end
 
       it { should compile.with_all_deps }
-      it { should contain_class('adapta') }
-      it { should contain_class('adapta::install') }
-      it { should contain_class('adapta::params') }
+      it { should contain_class('adapta_gtk_theme') }
+      it { should contain_class('adapta_gtk_theme::install') }
+      it { should contain_class('adapta_gtk_theme::params') }
     end
   end
 

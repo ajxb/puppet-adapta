@@ -1,8 +1,8 @@
-# adapta::params
+# adapta_gtk_theme::params
 #
 # Handles the module default parameters
 #
-class adapta::params {
+class adapta_gtk_theme::params {
 
   case $facts['operatingsystem'] {
     'Ubuntu': {

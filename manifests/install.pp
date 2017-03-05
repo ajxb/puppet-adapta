@@ -1,11 +1,11 @@
-# adapta::install
+# adapta_gtk_theme::install
 #
-# Handles the ppa setup and the adapta package
+# Handles the ppa setup and the adapta-gtk-theme package
 #
-# @param package_ensure Specifies whether to install the adapta package, and what version to install
-class adapta::install (
-  String $package_ensure = $adapta::params::package_ensure,
-) inherits adapta::params {
+# @param package_ensure Specifies whether to install the adapta-gtk-theme package, and what version to install
+class adapta_gtk_theme::install (
+  String $package_ensure = $adapta_gtk_theme::params::package_ensure,
+) inherits adapta_gtk_theme::params {
   include apt
   apt::ppa { 'ppa:tista/adapta': }
 
