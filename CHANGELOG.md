@@ -1,3 +1,8 @@
+## 2017-03-05 Release 1.2.0
+### Summary :
+
+* Add adapta_gtk_theme::user defined type to enable the theme for a given user
+
 ## 2017-03-05 Release 1.1.0
 ### Summary :
 
