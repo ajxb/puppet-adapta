@@ -1,4 +1,4 @@
-# adapta
+# adapta_gtk_theme
 
 #### Table of Contents
 
