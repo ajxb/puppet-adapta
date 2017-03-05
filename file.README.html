@@ -64,11 +64,13 @@
 <ol><li>
 <p><a href="#description">Description</a></p>
 </li><li>
-<p><a href="#setup">Setup - The basics of getting started with adapta</a></p>
+<p><a href="#setup">Setup - The basics of getting started with
+adapta_gtk_theme</a></p>
 <ul><li>
-<p><a href="#what-adapta-affects">What adapta affects</a></p>
+<p><a href="#what-adapta_gtk_theme-affects">What adapta_gtk_theme affects</a></p>
 </li><li>
-<p><a href="#beginning-with-adapta">Beginning with adapta</a></p>
+<p><a href="#beginning-with-adapta_gtk_theme">Beginning with
+adapta_gtk_theme</a></p>
 </li></ul>
 </li><li>
 <p><a href="#usage">Usage - Configuration options and additional
@@ -85,40 +87,41 @@ module</a></p>
 
 <h2 id="label-Description">Description</h2>
 
-<p>The adapta module installs the <a
-href="https://github.com/adapta-project/adapta-gtk-theme">adapta gtk
+<p>The adapta_gtk_theme module installs the <a
+href="https://github.com/adapta-project/adapta_gtk_theme">adapta gtk
 theme</a> from <a
 href="https://launchpad.net/~tista/+archive/ubuntu/adapta">ppa</a> on
 Ubuntu.</p>
 
 <h2 id="label-Setup">Setup</h2>
 
-<h3 id="label-What+adapta+affects">What adapta affects</h3>
+<h3 id="label-What+adapta_gtk_theme+affects">What adapta_gtk_theme affects</h3>
 <ul><li>
 <p>apt configuration to include adapta ppa</p>
 </li></ul>
 
-<h3 id="label-Beginning+with+adapta">Beginning with adapta</h3>
+<h3 id="label-Beginning+with+adapta_gtk_theme">Beginning with adapta_gtk_theme</h3>
 
-<p>To install adapta with default options:</p>
+<p>To install adapta-gtk-theme with default options:</p>
 
-<p><code>include adapta</code></p>
+<p><code>include adapta_gtk_theme</code></p>
 
 <p>To customize options:</p>
 
-<pre class="code ruby"><code class="ruby">class { &#39;adapta&#39;:
+<pre class="code ruby"><code class="ruby">class { &#39;adapta_gtk_theme&#39;:
   package_ensure =&gt; &#39;latest&#39;,
 }</code></pre>
 
 <h2 id="label-Usage">Usage</h2>
 
-<p>The default adapta class installs adapta. To use default configuration:</p>
+<p>The default adapta_gtk_theme class installs adapta-gtk-theme. To use
+default configuration:</p>
 
-<p><code>include adapta</code></p>
+<p><code>include adapta_gtk_theme</code></p>
 
 <p>To manually configure the installation:</p>
 
-<pre class="code ruby"><code class="ruby">class { &#39;adapta&#39;:
+<pre class="code ruby"><code class="ruby">class { &#39;adapta_gtk_theme&#39;:
   package_ensure =&gt; &#39;latest&#39;,
 }</code></pre>
 
@@ -128,35 +131,38 @@ Ubuntu.</p>
 
 <h4 id="label-Public+classes">Public classes</h4>
 <ul><li>
-<p><code>adapta</code>: Installs adapta</p>
+<p><code>adapta_gtk_theme</code>: Installs adapta-gtk-theme</p>
 </li></ul>
 
 <h4 id="label-Private+classes">Private classes</h4>
 <ul><li>
-<p><code>adapta::params</code>: Handles the module default parameters</p>
+<p><code>adapta_gtk_theme::params</code>: Handles the module default
+parameters</p>
 </li><li>
-<p><code>adapta::install</code>: Handles the ppa setup and the adapta package</p>
+<p><code>adapta_gtk_theme::install</code>: Handles the ppa setup and the
+adapta-gtk-theme package</p>
 </li></ul>
 
 <h3 id="label-Parameters">Parameters</h3>
 
-<p>The following parameters are available in the <code>adapta</code> class:</p>
+<p>The following parameters are available in the <code>adapta_gtk_theme</code>
+class:</p>
 
 <h4 id="label-package_ensure"><code>package_ensure</code></h4>
 
 <p>Data type: String.</p>
 
-<p>Whether to install the adapta package, and what version to install. Values:
-The same as used for the puppet package type, see <a
+<p>Whether to install the adapta-gtk-theme package, and what version to
+install. Values: The same as used for the puppet package type, see <a
 href="https://docs.puppet.com/puppet/latest/type.html#package-attribute-ensure">docs.puppet.com/puppet/latest/type.html#package-attribute-ensure</a></p>
 
 <p>Default value: &#39;latest&#39;.</p>
 
 <h2 id="label-Limitations">Limitations</h2>
 
-<p>This module has only been tested against Ubuntu 16.04. As adapta is a
-desktop theme this module will only produce tangible results when used with
-a desktop variant of Ubuntu.</p>
+<p>This module has only been tested against Ubuntu 16.04. As adapta-gtk-theme
+is a desktop theme this module will only produce tangible results when used
+with a desktop variant of Ubuntu.</p>
 
 <h2 id="label-Development">Development</h2>
 
@@ -210,7 +216,7 @@ documentation.</p>
 </div></div>
 
       <div id="footer">
-  Generated on Sun Mar  5 11:21:11 2017 by
+  Generated on Sun Mar  5 12:37:56 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.3.3).
 </div>
