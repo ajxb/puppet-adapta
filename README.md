@@ -13,17 +13,18 @@
 
 ## Description
 
-The adapta_gtk_theme module installs the [adapta gtk theme](https://github.com/adapta-project/adapta_gtk_theme) from [ppa](https://launchpad.net/~tista/+archive/ubuntu/adapta) on Ubuntu.
+The adapta_gtk_theme module installs the [Adapta GTK theme](https://github.com/adapta-project/adapta_gtk_theme) from [ppa](https://launchpad.net/~tista/+archive/ubuntu/adapta) and recommended font [Roboto](https://fonts.google.com/specimen/Roboto) on Ubuntu.
 
 ## Setup
 
 ### What adapta_gtk_theme affects
 
-* apt configuration to include adapta ppa
+* apt configuration to include the Adapta ppa
+* gsettings to configure global use of Adapta theme and Roboto fonts
 
 ### Beginning with adapta_gtk_theme
 
-To install adapta-gtk-theme with default options:
+To install adapta-gtk-theme and fonts-roboto with default options:
 
 `include adapta_gtk_theme`
 
@@ -31,13 +32,14 @@ To customize options:
 
 ```puppet
 class { 'adapta_gtk_theme':
-  package_ensure => 'latest',
+  font_package_ensure  => 'latest',
+  theme_package_ensure => 'latest',
 }
 ```
 
 ## Usage
 
-The default adapta_gtk_theme class installs adapta-gtk-theme. To use default configuration:
+The default adapta_gtk_theme class installs adapta-gtk-theme and fonts-roboto. To use default configuration:
 
 `include adapta_gtk_theme`
 
@@ -45,13 +47,9 @@ To manually configure the installation:
 
 ```puppet
 class { 'adapta_gtk_theme':
-  package_ensure => 'latest',
+  font_package_ensure  => 'latest',
+  theme_package_ensure => 'latest',
 }
-```
-
-To enable the theme for a given user:
-```puppet
-adapta_gtk_theme::user { 'my_user': }
 ```
 
 ## Reference
@@ -64,9 +62,9 @@ adapta_gtk_theme::user { 'my_user': }
 
 #### Private classes
 
-* `adapta_gtk_theme::config`: Handles the configuration of the theme
+* `adapta_gtk_theme::config`: Handles the configuration of the theme and fonts
 * `adapta_gtk_theme::params`: Handles the module default parameters
-* `adapta_gtk_theme::install`: Handles the ppa setup and the adapta-gtk-theme package
+* `adapta_gtk_theme::install`: Handles the ppa setup, the adapta-gtk-theme and fonts-roboto package
 
 ### Parameters
 
@@ -76,7 +74,7 @@ The following parameters are available in the `adapta_gtk_theme` class:
 
 Data type: String.
 
-Whether to install the fonts-roboto package, and what version to install. Values: The same as used for the puppet package type, see [https://docs.puppet.com/puppet/latest/type.html#package-attribute-ensure](https://docs.puppet.com/puppet/latest/type.html#package-attribute-ensure)
+Whether to install the fonts-roboto package and what version to install. Values: The same as used for the puppet package type, see [https://docs.puppet.com/puppet/latest/type.html#package-attribute-ensure](https://docs.puppet.com/puppet/latest/type.html#package-attribute-ensure)
 
 Default value: 'latest'.
 
@@ -84,7 +82,7 @@ Default value: 'latest'.
 
 Data type: String.
 
-Whether to install the adapta-gtk-theme package, and what version to install. Values: The same as used for the puppet package type, see [https://docs.puppet.com/puppet/latest/type.html#package-attribute-ensure](https://docs.puppet.com/puppet/latest/type.html#package-attribute-ensure)
+Whether to install the adapta-gtk-theme package and what version to install. Values: The same as used for the puppet package type, see [https://docs.puppet.com/puppet/latest/type.html#package-attribute-ensure](https://docs.puppet.com/puppet/latest/type.html#package-attribute-ensure)
 
 Default value: 'latest'.
 
