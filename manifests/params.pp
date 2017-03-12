@@ -6,7 +6,8 @@ class adapta_gtk_theme::params {
 
   case $facts['operatingsystem'] {
     'Ubuntu': {
-      $package_ensure = 'latest'
+      $font_package_ensure  = 'latest'
+      $theme_package_ensure = 'latest'
     }
     default: {
       fail("${facts['operatingsystem']} not supported")

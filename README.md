@@ -72,7 +72,15 @@ adapta_gtk_theme::user { 'my_user': }
 
 The following parameters are available in the `adapta_gtk_theme` class:
 
-#### `package_ensure`
+#### `font_package_ensure`
+
+Data type: String.
+
+Whether to install the fonts-roboto package, and what version to install. Values: The same as used for the puppet package type, see [https://docs.puppet.com/puppet/latest/type.html#package-attribute-ensure](https://docs.puppet.com/puppet/latest/type.html#package-attribute-ensure)
+
+Default value: 'latest'.
+
+#### `theme_package_ensure`
 
 Data type: String.
 
