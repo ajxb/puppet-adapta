@@ -1,3 +1,13 @@
+## 2017-03-12 Release 1.3.0
+### Summary :
+
+This is a breaking change, adapta_gtk_theme::user has been removed to use global settings.
+
+* Update to use [camptocamp/gnome](https://github.com/camptocamp/puppet-gnome) module for global configuration of theme in place of user specific configuration
+* Removed adapta_gtk_theme::user class
+* Update to reset configuration to Ubuntu defaults when packages are removed
+* Add installation and configuration of roboto font package
+
 ## 2017-03-05 Release 1.2.0
 ### Summary :
 
