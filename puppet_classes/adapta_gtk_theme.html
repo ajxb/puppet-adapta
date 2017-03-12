@@ -81,8 +81,8 @@
     
 <p>Class: adapta_gtk_theme</p>
 
-<p>Manage installation and configuration of adapta-gtk-theme on Ubuntu,
-installing from ppa</p>
+<p>Manage installation and configuration of adapta-gtk-theme on Ubuntu along
+with recommended font roboto, installing from ppa</p>
 
   </div>
 </div>
@@ -104,7 +104,8 @@ installing from ppa</p>
 </div></p>
       
       <pre class="example code"><code>class { &#39;adapta_gtk_theme&#39;:
-  package_ensure =&gt; true,
+  font_package_ensure  =&gt; &#39;latest&#39;,
+  theme_package_ensure =&gt; &#39;latest&#39;,
 }</code></pre>
     
   </div>
@@ -113,13 +114,32 @@ installing from ppa</p>
   
     <li>
       
-        <span class='name'>package_ensure</span>
+        <span class='name'>font_package_ensure</span>
       
       
         <span class='type'>(<tt>String</tt>)</span>
       
       
-        <em class="default">(defaults to: <tt>$adapta_gtk_theme::params::package_ensure</tt>)</em>
+        <em class="default">(defaults to: <tt>$adapta_gtk_theme::params::font_package_ensure</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Specifies whether to install the fonts-roboto package, and what version to
+install</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>theme_package_ensure</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>$adapta_gtk_theme::params::theme_package_ensure</tt>)</em>
       
       
         &mdash;
@@ -140,8 +160,6 @@ to install</p>
         <pre class="lines">
 
 
-13
-14
 15
 16
 17
@@ -149,20 +167,44 @@ to install</p>
 19
 20
 21
-22</pre>
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35</pre>
       </td>
       <td>
-        <pre class="code"><span class="info file"># File 'manifests/init.pp', line 13</span>
+        <pre class="code"><span class="info file"># File 'manifests/init.pp', line 15</span>
 
 class adapta_gtk_theme (
-  String  $package_ensure = $adapta_gtk_theme::params::package_ensure,
+  String $font_package_ensure  = $adapta_gtk_theme::params::font_package_ensure,
+  String $theme_package_ensure = $adapta_gtk_theme::params::theme_package_ensure,
 ) inherits adapta_gtk_theme::params {
 
   class { &#39;adapta_gtk_theme::install&#39;:
-    package_ensure =&gt; $package_ensure,
+    font_package_ensure  =&gt; $font_package_ensure,
+    theme_package_ensure =&gt; $theme_package_ensure,
+  }
+
+  class { &#39;adapta_gtk_theme::config&#39;:
+    font_package_ensure  =&gt; $font_package_ensure,
+    theme_package_ensure =&gt; $theme_package_ensure,
   }
 
   contain adapta_gtk_theme::install
+  contain adapta_gtk_theme::config
+
+  Class[&#39;adapta_gtk_theme::install&#39;]
+    -&gt; Class[&#39;adapta_gtk_theme::config&#39;]
 }</pre>
       </td>
     </tr>
@@ -171,7 +213,7 @@ class adapta_gtk_theme (
 </div>
 
       <div id="footer">
-  Generated on Sun Mar  5 16:13:39 2017 by
+  Generated on Sun Mar 12 22:35:52 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.3.3).
 </div>

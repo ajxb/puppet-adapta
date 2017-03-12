@@ -81,7 +81,7 @@
     
 <p>adapta_gtk_theme::install</p>
 
-<p>Handles the ppa setup and the adapta-gtk-theme package</p>
+<p>Handles the ppa setup, the adapta-gtk-theme and fonts-roboto packages</p>
 
   </div>
 </div>
@@ -91,13 +91,32 @@
   
     <li>
       
-        <span class='name'>package_ensure</span>
+        <span class='name'>font_package_ensure</span>
       
       
         <span class='type'>(<tt>String</tt>)</span>
       
       
-        <em class="default">(defaults to: <tt>$adapta_gtk_theme::params::package_ensure</tt>)</em>
+        <em class="default">(defaults to: <tt>$adapta_gtk_theme::params::font_package_ensure</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Specifies whether to install the fonts-roboto package, and what version to
+install</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>theme_package_ensure</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>$adapta_gtk_theme::params::theme_package_ensure</tt>)</em>
       
       
         &mdash;
@@ -118,7 +137,6 @@ to install</p>
         <pre class="lines">
 
 
-6
 7
 8
 9
@@ -131,19 +149,30 @@ to install</p>
 16
 17
 18
-19</pre>
+19
+20
+21
+22
+23
+24
+25</pre>
       </td>
       <td>
-        <pre class="code"><span class="info file"># File 'manifests/install.pp', line 6</span>
+        <pre class="code"><span class="info file"># File 'manifests/install.pp', line 7</span>
 
 class adapta_gtk_theme::install (
-  String $package_ensure = $adapta_gtk_theme::params::package_ensure,
+  String $font_package_ensure  = $adapta_gtk_theme::params::font_package_ensure,
+  String $theme_package_ensure = $adapta_gtk_theme::params::theme_package_ensure,
 ) inherits adapta_gtk_theme::params {
   include apt
   apt::ppa { &#39;ppa:tista/adapta&#39;: }
 
   package { &#39;adapta-gtk-theme&#39;:
-    ensure =&gt; $package_ensure,
+    ensure =&gt; $theme_package_ensure,
+  }
+
+  package { &#39;fonts-roboto&#39;:
+    ensure =&gt; $font_package_ensure,
   }
 
   Apt::Ppa[&#39;ppa:tista/adapta&#39;]
@@ -157,7 +186,7 @@ class adapta_gtk_theme::install (
 </div>
 
       <div id="footer">
-  Generated on Sun Mar  5 16:13:39 2017 by
+  Generated on Sun Mar 12 22:35:52 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.3.3).
 </div>

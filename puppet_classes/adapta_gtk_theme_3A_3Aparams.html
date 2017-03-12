@@ -69,6 +69,8 @@
       
       <span class='object_link'><a href="adapta_gtk_theme.html" title="puppet_classes::adapta_gtk_theme (puppet_class)">adapta_gtk_theme</a></span><br/>
       
+      <span class='object_link'><a href="adapta_gtk_theme_3A_3Aconfig.html" title="puppet_classes::adapta_gtk_theme::config (puppet_class)">adapta_gtk_theme::config</a></span><br/>
+      
       <span class='object_link'><a href="adapta_gtk_theme_3A_3Ainstall.html" title="puppet_classes::adapta_gtk_theme::install (puppet_class)">adapta_gtk_theme::install</a></span><br/>
       
     </dd>
@@ -111,7 +113,8 @@
 12
 13
 14
-15</pre>
+15
+16</pre>
       </td>
       <td>
         <pre class="code"><span class="info file"># File 'manifests/params.pp', line 5</span>
@@ -120,7 +123,8 @@ class adapta_gtk_theme::params {
 
   case $facts[&#39;operatingsystem&#39;] {
     &#39;Ubuntu&#39;: {
-      $package_ensure = &#39;latest&#39;
+      $font_package_ensure  = &#39;latest&#39;
+      $theme_package_ensure = &#39;latest&#39;
     }
     default: {
       fail(&quot;${facts[&#39;operatingsystem&#39;]} not supported&quot;)
@@ -134,7 +138,7 @@ class adapta_gtk_theme::params {
 </div>
 
       <div id="footer">
-  Generated on Sun Mar  5 16:13:39 2017 by
+  Generated on Sun Mar 12 22:35:52 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.8 (ruby-2.3.3).
 </div>
