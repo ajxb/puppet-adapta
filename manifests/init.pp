@@ -18,5 +18,13 @@ class adapta_gtk_theme (
     package_ensure => $package_ensure,
   }
 
+  class { 'adapta_gtk_theme::config':
+    package_ensure => $package_ensure,
+  }
+
   contain adapta_gtk_theme::install
+  contain adapta_gtk_theme::config
+
+  Class['adapta_gtk_theme::install']
+    -> Class['adapta_gtk_theme::config']
 }
