@@ -14,6 +14,16 @@ describe 'adapta_gtk_theme::install' do
         it { should contain_package('adapta-gtk-theme').with_ensure('latest') }
       end
 
+      context 'remove adapta theme' do
+        let :params do
+          {
+            package_ensure: 'absent'
+          }
+        end
+
+        it { should contain_package('adapta-gtk-theme').with_ensure('absent') }
+      end
+
       it { should contain_apt__ppa('ppa:tista/adapta').that_notifies('Class[apt::update]') }
       it { should contain_package('adapta-gtk-theme').that_requires('Class[apt::update]') }
     end

@@ -6,17 +6,31 @@
 class adapta_gtk_theme::config (
   String $package_ensure = $adapta_gtk_theme::params::package_ensure,
 ) inherits adapta_gtk_theme::params {
-  gnome::gsettings { 'org.gnome.desktop.wm.preferences_theme':
-    schema  => 'org.gnome.desktop.wm.preferences',
-    key     => 'theme',
-    value   => '"Adapta"',
-    require => Package['adapta-gtk-theme'],
-  }
+  if ($package_ensure == 'absent') or ($package_ensure == 'purged') {
+    gnome::gsettings { 'org.gnome.desktop.wm.preferences_theme':
+      schema => 'org.gnome.desktop.wm.preferences',
+      key    => 'theme',
+      value  => '"Ambiance"',
+    }
 
-  gnome::gsettings { 'org.gnome.desktop.interface_gtk-theme':
-    schema  => 'org.gnome.desktop.interface',
-    key     => 'gtk-theme',
-    value   => '"Adapta"',
-    require => Package['adapta-gtk-theme'],
+    gnome::gsettings { 'org.gnome.desktop.interface_gtk-theme':
+      schema => 'org.gnome.desktop.interface',
+      key    => 'gtk-theme',
+      value  => '"Ambiance"',
+    }
+  } else {
+    gnome::gsettings { 'org.gnome.desktop.wm.preferences_theme':
+      schema  => 'org.gnome.desktop.wm.preferences',
+      key     => 'theme',
+      value   => '"Adapta"',
+      require => Package['adapta-gtk-theme'],
+    }
+
+    gnome::gsettings { 'org.gnome.desktop.interface_gtk-theme':
+      schema  => 'org.gnome.desktop.interface',
+      key     => 'gtk-theme',
+      value   => '"Adapta"',
+      require => Package['adapta-gtk-theme'],
+    }
   }
 }
