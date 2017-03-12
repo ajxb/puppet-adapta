@@ -8,6 +8,7 @@ describe 'adapta_gtk_theme' do
 
       it { should compile.with_all_deps }
       it { should contain_class('adapta_gtk_theme') }
+      it { should contain_class('adapta_gtk_theme::config') }
       it { should contain_class('adapta_gtk_theme::install') }
       it { should contain_class('adapta_gtk_theme::params') }
     end
